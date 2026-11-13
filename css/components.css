@@ -184,3 +184,17 @@
 }
 
 @keyframes sheetUp { from { transform: translateY(40px); opacity: .6; } to { transform: translateY(0); opacity: 1; } }
+
+/* ===== Inline nav (replaces hamburger menu) & search in products ===== */
+.main-nav { flex: 1; display: flex; align-items: center; justify-content: space-evenly; min-width: 0; }
+.main-nav a { color: #fff; font-weight: 700; text-decoration: none; padding: .55rem .95rem; border-radius: 8px; transition: background .18s, color .18s; white-space: nowrap; }
+.main-nav a:hover { background: rgba(242, 210, 27, .15); color: var(--gold); }
+.filters .search { flex: 1 1 100%; width: 100%; background: #fff; border: 1px solid var(--maroon); order: 0; }
+.filters .search:focus { outline: 2px solid rgba(242, 210, 27, .65); }
+
+@media (max-width: 600px) {
+  .header-inner { justify-content: space-between; }
+  .main-nav { order: 3; flex-basis: 100%; justify-content: space-between; gap: 0; }
+  .main-nav a { flex: 1; text-align: center; padding: .6rem .3rem; min-height: 44px; }
+  .brand { margin-right: auto; }
+}

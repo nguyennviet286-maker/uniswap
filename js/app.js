@@ -19,34 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   bind("typeFilter", "type");
   bind("sortFilter", "sort");
   bind("favOnly", "favOnly", "checked");
-    bind("searchInput", "search");
-  document.getElementById("searchInput").addEventListener("keydown", e => {
-    if (e.key !== "Enter") return;
-    e.preventDefault();
-    e.target.blur();
-    document.getElementById("products").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  bind("categoryFilter", "category");
 
   // Modals
   document.getElementById("postBtn").onclick = () => App.ui.openModal("postModal");
   document.getElementById("heroPostBtn").onclick = () => App.ui.openModal("postModal");
-  const menuToggle = document.getElementById("menuToggle");
-  const siteMenu = document.getElementById("siteMenu");
-  const closeMenu = () => {
-    siteMenu.hidden = true;
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
-  menuToggle.addEventListener("click", () => {
-    siteMenu.hidden = !siteMenu.hidden;
-    menuToggle.setAttribute("aria-expanded", String(!siteMenu.hidden));
-  });
-  siteMenu.addEventListener("click", ev => {
-    if (ev.target.closest("a")) closeMenu();
-  });
-  document.addEventListener("click", ev => {
-    if (!ev.target.closest(".menu-wrap")) closeMenu();
-  });
   document.querySelectorAll(".modal").forEach(m =>
     m.addEventListener("click", e => {
       if (e.target === m || e.target.hasAttribute("data-close")) App.ui.closeModals();
@@ -55,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       App.ui.closeModals();
-      closeMenu();
     }
   });
 

@@ -23,16 +23,12 @@
         </svg>
         <span class="brand-name">Uni<span>Swap</span></span>
       </a>
-      <input id="searchInput" class="search" type="search" placeholder="Search textbooks, laptops, bikes...">
+      <nav class="main-nav" aria-label="Main menu">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#forum">Forum</a>
+      </nav>
       <button id="postBtn" class="btn btn-gold">+ Post an item</button>
-      <div class="menu-wrap">
-        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu"><span></span><span></span><span></span></button>
-        <nav id="siteMenu" class="site-menu" aria-label="Main menu" hidden>
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#forum">Forum</a>
-        </nav>
-      </div>
     </div>
   </header>
 
@@ -61,6 +57,7 @@
   <main class="container">
     <!-- ===== FILTERS (Member B) ===== -->
     <section id="products" class="filters" data-reveal="up">
+      <input id="searchInput" class="search" type="search" placeholder="Search textbooks, laptops, bikes...">
       <select id="categoryFilter"></select>
       <select id="typeFilter">
         <option value="all">All deals</option>
