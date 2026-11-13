@@ -19,6 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
   bind("typeFilter", "type");
   bind("sortFilter", "sort");
   bind("favOnly", "favOnly", "checked");
+  bind("searchInput", "search");
+    // Nhấn Enter trong ô tìm kiếm: cuộn xuống mục sản phẩm
+  document.getElementById("searchInput").addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    e.target.blur(); // ẩn bàn phím trên điện thoại
+    document.getElementById("products").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   // Modals
   document.getElementById("postBtn").onclick = () => App.ui.openModal("postModal");
