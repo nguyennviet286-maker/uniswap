@@ -1,0 +1,13 @@
+/* Theme colours taken from the Hanoi University logo */
+:root {
+  --maroon: #6b0f0f;
+  --maroon-dark: #4e0909;
+  --gold: #f2d21b;
+  --gold-soft: #fff3a8;
+  --cream: #fdf8ee;
+  --ink: #2a1212;
+  --muted: #7a5f5f;
+  --line: #e8dcc8;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(78, 9, 9, .15);
+}

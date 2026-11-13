@@ -1,0 +1,25 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { font-family: "Segoe UI", Arial, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.5; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+[hidden] { display: none !important; }
+input, select, textarea, button { font: inherit; }
+.btn { border: 0; padding: .6rem 1.1rem; border-radius: 8px; cursor: pointer; font-weight: 600; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 7px 18px rgba(42, 18, 18, .16); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn-gold { background: var(--gold); color: var(--maroon-dark); }
+.btn-maroon { background: var(--maroon); color: var(--gold); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+/* ===== Mobile basics ===== */
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-tap-highlight-color: transparent; padding-bottom: env(safe-area-inset-bottom); }
+button, a, select, .card { touch-action: manipulation; }
+/* iOS auto-zooms when inputs are smaller than 16px */
+@media (max-width: 800px) {
+  input, select, textarea { font-size: 16px; }
+}
