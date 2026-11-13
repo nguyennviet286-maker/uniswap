@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
   bind("typeFilter", "type");
   bind("sortFilter", "sort");
   bind("favOnly", "favOnly", "checked");
-  bind("searchInput", "search");
-    // Nhấn Enter trong ô tìm kiếm: cuộn xuống mục sản phẩm
+    bind("searchInput", "search");
   document.getElementById("searchInput").addEventListener("keydown", e => {
     if (e.key !== "Enter") return;
     e.preventDefault();
-    e.target.blur(); // ẩn bàn phím trên điện thoại
+    e.target.blur();
     document.getElementById("products").scrollIntoView({ behavior: "smooth", block: "start" });
   });
+  bind("categoryFilter", "category");
 
   // Modals
   document.getElementById("postBtn").onclick = () => App.ui.openModal("postModal");
